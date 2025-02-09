@@ -43,12 +43,15 @@ export function useForceUpdate() {
 export function useFetchCollection<TData>(collectionKey: string) {
   const [collection, setCollection] = useState<TData[]>([])
 
-  const fetchIt = useCallback(() => {
-    pb.collection(collectionKey)
-      .getFullList({ sort: "name" })
-      .then(collec => setCollection(collec as TData[]))
-      .catch(err => console.error("ERROR: ", err))
-  }, [collectionKey])
+  const fetchIt = useCallback(
+    (sortBy = "id") => {
+      pb.collection(collectionKey)
+        .getFullList({ sort: sortBy })
+        .then(collec => setCollection(collec as TData[]))
+        .catch(err => console.error("ERROR: ", err))
+    },
+    [collectionKey],
+  )
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(fetchIt, [collectionKey])

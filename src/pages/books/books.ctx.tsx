@@ -4,7 +4,7 @@ import type { BookWId } from "./books.types"
 
 interface BooksContext {
   books: BookWId[]
-  reloadBooks: () => void
+  reloadBooks: (sortBy?: string) => void
 }
 
 const defaultBooksContextValue: BooksContext = {

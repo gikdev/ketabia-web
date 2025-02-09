@@ -3,7 +3,7 @@ import { Link } from "react-router"
 
 export default function Nav() {
   return (
-    <nav className="px-5 py-2 flex gap-2 items-center">
+    <nav className="bg-slate-02 px-5 py-2 flex gap-2 items-center">
       <Link to="/" className="font-bold text-lg me-auto hover:text-slate-12">
         Ketabia
       </Link>

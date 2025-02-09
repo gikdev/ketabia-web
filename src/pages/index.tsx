@@ -1,3 +1,4 @@
+import { NuqsAdapter } from "nuqs/adapters/react-router/v7"
 import { Route, Routes } from "react-router"
 import Base from "./base.layout"
 import Books from "./books"
@@ -8,17 +9,19 @@ import Home from "./home"
 
 export default function Pages() {
   return (
-    <BooksProvider>
-      <Routes>
-        <Route path="/" element={<Base />}>
-          <Route index element={<Home />} />
-          <Route path="books">
-            <Route index element={<Books />} />
-            <Route path="new" element={<NewBook />} />
-            <Route path="edit/:id" element={<EditBook />} />
+    <NuqsAdapter>
+      <BooksProvider>
+        <Routes>
+          <Route path="/" element={<Base />}>
+            <Route index element={<Home />} />
+            <Route path="books">
+              <Route index element={<Books />} />
+              <Route path="new" element={<NewBook />} />
+              <Route path="edit/:id" element={<EditBook />} />
+            </Route>
           </Route>
-        </Route>
-      </Routes>
-    </BooksProvider>
+        </Routes>
+      </BooksProvider>
+    </NuqsAdapter>
   )
 }
