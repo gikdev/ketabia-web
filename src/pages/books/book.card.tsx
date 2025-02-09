@@ -58,9 +58,11 @@ export default function BookCard({ book, handleDeleteBtnClick, handleEditBtnClic
       <div className="flex justify-between items-center gap-1">
         <div className="flex">
           {new Array(book.rating).fill(true).map((_, i) => (
+            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             <Star key={i} size={ICON_SIZE} weight="fill" color="goldenrod" />
           ))}
           {new Array(5 - book.rating).fill(true).map((_, i) => (
+            // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
             <Star key={i} size={ICON_SIZE} />
           ))}
         </div>

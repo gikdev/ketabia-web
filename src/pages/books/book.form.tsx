@@ -29,6 +29,7 @@ export default function BookForm({
 }: Props) {
   const [book, alterBook, setBook] = useObjectState<BookBase>(defaultBook)
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => setBook(defaultBook), [defaultBook])
 
   return (
@@ -36,9 +37,7 @@ export default function BookForm({
       className="flex flex-col gap-3 max-w-[50rem] mx-auto"
       onSubmit={e => {
         e.preventDefault()
-        handleSubmit(book, () => {
-          setBook(DEFAULT_BOOK)
-        })
+        handleSubmit(book, () => setBook(DEFAULT_BOOK))
       }}
     >
       <input
