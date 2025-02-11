@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router"
 import E404 from "./E404"
 import Base from "./base.layout"
 import Books from "./books"
+import EditBook from "./books/[id]/edit"
 import { BooksProvider } from "./books/books.ctx"
-import EditBook from "./books/edit/[id]"
 import NewBook from "./books/new"
 import ChangeLog from "./changelog"
 import Home from "./home"
@@ -20,7 +20,9 @@ export default function Pages() {
             <Route path="books">
               <Route index element={<Books />} />
               <Route path="new" element={<NewBook />} />
-              <Route path="edit/:id" element={<EditBook />} />
+              <Route path=":id">
+                <Route path="edit" element={<EditBook />} />
+              </Route>
             </Route>
             <Route path="*" element={<E404 />} />
           </Route>

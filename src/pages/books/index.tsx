@@ -28,7 +28,7 @@ export default function Books() {
     if (sortBy === BooksListSortingMode.StarsMost) return reloadBooks("-rating")
   }, [sortBy, reloadBooks])
 
-  const handleEditBtnClick = (id: string) => navigate(`/books/edit/${id}`)
+  const handleEditBtnClick = (id: string) => navigate(`/books/${id}/edit`)
 
   const handleDeleteBtnClick = (id: string) => {
     const isConfirmed = confirm("U sure?")
