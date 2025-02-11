@@ -18,7 +18,8 @@ export default function NewBook() {
 
   return (
     <div>
-      <h1 className="text-3xl mb-5 text-center font-bold">Create a New Book</h1>
+      <title>Ketabia | Add New Book</title>
+      <h1 className="text-3xl mb-5 text-center font-bold">Add a New Book</h1>
 
       <BookForm handleSubmit={handleSubmit} mode="create" />
     </div>

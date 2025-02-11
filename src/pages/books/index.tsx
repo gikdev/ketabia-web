@@ -1,7 +1,8 @@
 import pb from "@/lib/pb"
+import { PlusSquare } from "@phosphor-icons/react"
 import { parseAsStringEnum, useQueryState } from "nuqs"
 import { useEffect } from "react"
-import { useNavigate } from "react-router"
+import { Link, useNavigate } from "react-router"
 import BookCard from "./book.card"
 import { useBooksContext } from "./books.ctx"
 
@@ -41,9 +42,10 @@ export default function Books() {
 
   return (
     <div>
+      <title>Ketabia | Books</title>
       <h1 className="text-3xl mb-3 text-center font-bold">All Books</h1>
 
-      <form className="mb-5 flex items-center justify-center" onSubmit={e => e.preventDefault()}>
+      <div className="mb-5 flex items-center gap-5 justify-center">
         <select
           value={sortBy}
           onChange={e => {
@@ -56,7 +58,15 @@ export default function Books() {
           <option value={BooksListSortingMode.AuthorAsc}>Sort by author name</option>
           <option value={BooksListSortingMode.StarsMost}>Sort by stars</option>
         </select>
-      </form>
+
+        <Link
+          to="/books/new"
+          className="flex gap-1 items-center bg-green-03 text-green-11 hover:text-green-12 hover:bg-green-04  px-3 py-2 rounded-lg"
+        >
+          <PlusSquare weight="duotone" size={20} />
+          <span>Add a New Book</span>
+        </Link>
+      </div>
 
       <div className="flex gap-5 items-center justify-center flex-wrap max-w-[60rem] mx-auto">
         {books?.map(book => (

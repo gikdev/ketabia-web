@@ -1,4 +1,11 @@
 {
+  "v1.2.1": [
+    "Added some titles to pages",
+    "Updated dependencies (React v19...)",
+    "Moved 'create' navbar link, to be a btn in the 'books' page",
+    "Improved the design of book form elements",
+    "Removed some of the unused code"
+  ],
   "v1.2.0": ["Added changelog", "Added a 404 page"],
   "v1.1.0": [
     "Fixed a layout issue with books' form's tags in small devices",

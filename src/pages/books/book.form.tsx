@@ -42,14 +42,14 @@ export default function BookForm({
       }}
     >
       <input
-        className="p-2 border border-slate-07 focus:border-slate-08"
+        className="p-2 border border-slate-07 focus:border-slate-08 bg-slate-03 hover:bg-slate-04 focus:bg-slate-04 rounded-lg py-3 px-4 text-slate-12"
         placeholder="Book Name:"
         value={book.name}
         onChange={e => alterBook("name", e.target.value)}
       />
 
       <input
-        className="p-2 border border-slate-07 focus:border-slate-08"
+        className="p-2 border border-slate-07 focus:border-slate-08 bg-slate-03 hover:bg-slate-04 focus:bg-slate-04 rounded-lg py-3 px-4 text-slate-12"
         placeholder="Author Name:"
         value={book.authorName}
         onChange={e => alterBook("authorName", e.target.value)}
@@ -118,10 +118,10 @@ export default function BookForm({
 
       {["edit", "create"].includes(mode) && (
         <button
-          className="bg-green-09 hover:bg-green-10 text-white cursor-pointer p-2 active:scale-95 disabled:bg-slate-700 disabled:cursor-not-allowed"
+          className="bg-green-09 hover:bg-green-10 text-white cursor-pointer p-2 active:scale-95 disabled:bg-slate-700 disabled:cursor-not-allowed rounded-lg"
           type="submit"
         >
-          📚 {mode === "create" && "Create"} {mode === "edit" && "Edit"} Book
+          📚 {mode === "create" && "Add"} {mode === "edit" && "Edit"} Book
         </button>
       )}
     </form>

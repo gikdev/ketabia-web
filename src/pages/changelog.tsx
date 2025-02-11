@@ -7,6 +7,7 @@ interface Changelog {
 export default function ChangeLog() {
   return (
     <div className="flex flex-col gap-5">
+      <title>Ketabia | Changelog</title>
       <h1 className="font-bold text-3xl">Changelog</h1>
       <hr className="my-0 border-none bg-slate-06 h-0.5 max-w-96" />
       {Object.keys(changelog).map(k => (
