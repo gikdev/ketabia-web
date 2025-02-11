@@ -45,7 +45,7 @@ export default function Books() {
       <title>Ketabia | Books</title>
       <h1 className="text-3xl mb-3 text-center font-bold">All Books</h1>
 
-      <div className="mb-5 flex items-center gap-5 justify-center">
+      <div className="mb-5 flex flex-wrap items-center gap-5 justify-center">
         <select
           value={sortBy}
           onChange={e => {
@@ -61,7 +61,7 @@ export default function Books() {
 
         <Link
           to="/books/new"
-          className="flex gap-1 items-center bg-green-03 text-green-11 hover:text-green-12 hover:bg-green-04  px-3 py-2 rounded-lg"
+          className="flex gap-1 min-w-max items-center bg-green-03 text-green-11 hover:text-green-12 hover:bg-green-04  px-3 py-2 rounded-lg"
         >
           <PlusSquare weight="duotone" size={20} />
           <span>Add a New Book</span>

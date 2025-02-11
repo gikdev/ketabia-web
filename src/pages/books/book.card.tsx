@@ -7,6 +7,7 @@ import {
   Star,
   Trash,
 } from "@phosphor-icons/react"
+import BookCover from "./book-cover.comp"
 import type { BookWId } from "./books.types"
 import { IconTag } from "./icon-tag.comp"
 
@@ -20,17 +21,15 @@ interface Props {
 }
 
 export default function BookCard({ book, handleDeleteBtnClick, handleEditBtnClick }: Props) {
-  const isCompleted = book.isRead && book.isBought && book.isConfirmed && book.hasBeenApplied
-
   return (
-    <div className="flex flex-col gap-2 bg-slate-02 p-2 rounded-lg min-w-72">
-      <p className="flex font-bold gap-1 text-lg items-center text-center mx-auto">
-        {isCompleted && <CheckSquare weight="duotone" className="text-green-11" />} {book.name}
-      </p>
+    <div className="flex flex-col gap-2 bg-slate-02 p-2 rounded-lg min-w-72 max-w-80 w-full">
+      {/* <p className="flex font-bold gap-1 text-lg items-center text-center mx-auto">{book.name}</p>
 
       <p className="flex gap-1 italic items-center text-sm text-center mx-auto">
         {book.authorName}
-      </p>
+      </p> */}
+
+      <BookCover book={book} />
 
       <div className="grid grid-cols-2 gap-1">
         <IconTag
