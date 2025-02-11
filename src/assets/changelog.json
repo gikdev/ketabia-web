@@ -1,0 +1,8 @@
+{
+  "v1.2.0": ["Added changelog", "Added a 404 page"],
+  "v1.1.0": [
+    "Fixed a layout issue with books' form's tags in small devices",
+    "Added a 'star input' in books' forms"
+  ],
+  "v1.0.0": ["Made the app"]
+}

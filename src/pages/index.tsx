@@ -1,10 +1,12 @@
 import { NuqsAdapter } from "nuqs/adapters/react-router/v7"
 import { Route, Routes } from "react-router"
+import E404 from "./E404"
 import Base from "./base.layout"
 import Books from "./books"
 import { BooksProvider } from "./books/books.ctx"
 import EditBook from "./books/edit/[id]"
 import NewBook from "./books/new"
+import ChangeLog from "./changelog"
 import Home from "./home"
 
 export default function Pages() {
@@ -14,11 +16,13 @@ export default function Pages() {
         <Routes>
           <Route path="/" element={<Base />}>
             <Route index element={<Home />} />
+            <Route path="changelog" element={<ChangeLog />} />
             <Route path="books">
               <Route index element={<Books />} />
               <Route path="new" element={<NewBook />} />
               <Route path="edit/:id" element={<EditBook />} />
             </Route>
+            <Route path="*" element={<E404 />} />
           </Route>
         </Routes>
       </BooksProvider>
