@@ -1,3 +1,4 @@
+import StarsInput from "@/components/stars-input"
 import { useObjectState } from "@/lib/hooks"
 import { BookOpenText, CheckSquare, ListChecks, ShoppingCart } from "@phosphor-icons/react"
 import { useEffect } from "react"
@@ -54,17 +55,9 @@ export default function BookForm({
         onChange={e => alterBook("authorName", e.target.value)}
       />
 
-      <input
-        min={0}
-        max={5}
-        type="number"
-        className="p-2 border border-slate-07 focus:border-slate-08"
-        placeholder="Rating:"
-        value={book.rating}
-        onChange={e => alterBook("rating", Number(e.target.value))}
-      />
+      <StarsInput className="mx-auto" value={book.rating} onChange={v => alterBook("rating", v)} />
 
-      <div className="flex justify-center gap-2">
+      <div className="flex justify-center flex-wrap gap-2">
         <label className="cursor-pointer flex gap-1 items-center">
           <input
             className="hidden"
