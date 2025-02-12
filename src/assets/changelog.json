@@ -1,4 +1,5 @@
 {
+  "v1.3.0.2": ["Moved the API (PocketBase currently) to another folder/repo"],
   "v1.3.0.1": ["Changed a route (instead of '/books/edit/:id' it's '/books/:id/edit')"],
   "v1.3.0": ["Added a randomly generated book cover for book cards"],
   "v1.2.1": [

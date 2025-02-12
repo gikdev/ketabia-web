@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  build: { outDir: "./pb_public" },
+  build: { outDir: "../api/pb_public" },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
